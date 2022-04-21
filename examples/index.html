@@ -41,7 +41,6 @@
             $(function() {
                 // By executing `.load()` with selector, we avoid script being ran
                 $('#back-light-note').load('../src/back.html .note', '', () => {
-                    console.log('Loaded back of light note!');
                     const ev = new CustomEvent('light-card-loaded');
                     document.dispatchEvent(ev);
                 });
@@ -89,7 +88,6 @@
             // Now we load the script of that file using a nasty hack
            $(() => {
                 $('#dummy').load('../src/back.html', '', () => {
-                    console.log('Loaded a script!');
                     // Workaround for back script not finding more than one
                     sc1.id = 'Not this anymore';
                     sc2.id = 'Not this either';
