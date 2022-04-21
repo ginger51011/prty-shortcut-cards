@@ -1,40 +1,53 @@
-<span id="shortcut-sequence" hidden>{{Shortcut}}</span>
-<div id="formatted-sequence" class="shortcut-container">
-    {{^Shortcut}}
-        <i>Fill field shortcut in form `Ctrl Shift P` to format!</i>
-    {{/Shortcut}}
-</div>
+<div class="note">
+    <div class="title-container">
+        <span class="title-text">
+            {{Software}}
+            {{^Software}}
+                Unspecified Software
+            {{/Software}}
+        </span>
+    </div>
+    <div class="front-container">
+        {{Action}}
+    </div>
+    <span id="shortcut-sequence" hidden>{{Shortcut}}</span>
+    <div id="formatted-sequence" class="shortcut-container">
+        {{^Shortcut}}
+            <i>Fill field shortcut in form `Ctrl Shift P` to format!</i>
+        {{/Shortcut}}
+    </div>
 
-<script>
-    /**
-    */
-    const shortcutText = document.getElementById('shortcut-sequence').innerText;
+    <script>
+        /**
+        */
+        const shortcutText = document.getElementById('shortcut-sequence').innerText;
 
-    // Splits shortcut on `,`, to support commands
-    // as `Ctrl+K, O`, and applies styling on components
-    let subcommands = shortcutText.split(',');
+        // Splits shortcut on `,`, to support commands
+        // as `Ctrl+K, O`, and applies styling on components
+        let subcommands = shortcutText.split(',');
 
-    // Trim away leading and trailing whitespaces
-    subcommands = subcommands.map((sub) => sub.trim());
+        // Trim away leading and trailing whitespaces
+        subcommands = subcommands.map((sub) => sub.trim());
 
-    const container = document.getElementById('formatted-sequence');
+        const container = document.getElementById('formatted-sequence');
 
-    subcommands.forEach((sub, idx) => {
-        if (idx !== 0) {
-            // We have a new subcommand, prepend a `, `
-            container.append(', ');
-        }
-
-        const shortcutArray = sub.split(' ');
-        shortcutArray.forEach((s, i) => {
-            if (i !== 0) {
-                // Prepend a plus, this is not the first in a sequence
-                container.append('+');
+        subcommands.forEach((sub, idx) => {
+            if (idx !== 0) {
+                // We have a new subcommand, prepend a `, `
+                container.append(', ');
             }
 
-            const newElement = document.createElement('kbd');
-            newElement.innerText = s;
-            container.append(newElement);
+            const shortcutArray = sub.split(' ');
+            shortcutArray.forEach((s, i) => {
+                if (i !== 0) {
+                    // Prepend a plus, this is not the first in a sequence
+                    container.append('+');
+                }
+
+                const newElement = document.createElement('kbd');
+                newElement.innerText = s;
+                container.append(newElement);
+            });
         });
-    });
-</script>
+    </script>
+</div>
