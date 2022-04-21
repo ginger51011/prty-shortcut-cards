@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Used for development and to generate images -->
+<head>
+    <link rel="stylesheet" type="text/css" href="../src/style.css">
+</head>
+<body>
+    <!-- We use jQuery to load our other HTML files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- These divs emulates Anki -->
+    <div class="card nightMode">
+        <div id="back-night-mode"></div>
+        <script>
+            $(function() {
+                // By executing `.load()` with selector, we avoid script being ran
+                $('#back-night-mode').load('../src/back.html .note', '', () => {
+                    const ev = new CustomEvent('card-loaded');
+                    document.dispatchEvent(ev);
+                });
+            });
+        </script>
+    </div>
+    
+    <!-- Nasty hack to load script -->
+    <div id="dummy" hidden></div>
+    
+    <script>
+        // We want to replace all annoying placeholders `{{ Bla }}` with
+        // something useful, so we do it in this yank way
+        document.addEventListener('card-loaded', () => {
+            const tts = document.getElementsByClassName('title-text');
+            
+            for (let i = 0; i < tts.length; i-=-1) {
+                tts[i].innerText = 'software';
+            }
+
+            const fcs = document.getElementsByClassName('front-container');
+
+            for (let i = 0; i < fcs.length; i-=-1) {
+                fcs[i].innerText = 'Simply win at life, also insert on new line';
+            }
+
+            document.getElementById('shortcut-combo-1').innerText = 'Ctrl K';
+            document.getElementById('shortcut-combo-2').innerText = 'I';
+            
+            // Make sure back of card is empty
+            document.getElementById('formatted-shortcut').innerHTML = '';
+            
+            // Now we load the script of that file using a nasty hack
+           $(() => {
+                $('#dummy').load('../src/back.html');
+           })
+        });
+    </script>
+</body>

@@ -54,3 +54,14 @@ and
 
 Now you will have inversed it all! If you never want the light cards, simple remove everything related to
 `.card` , and remove `.nightMode` from the line containing `.card.nightMode`.
+
+## Development
+
+All card variants can be previewed using `example/index.html`. Run a local webserver, using the same
+directory as this `README` as root, and click your way to `example/index.html`. To do this using python, run
+
+```
+python3 -m http.server 1337
+```
+
+to run a server on http://127.0.0.1:1337
