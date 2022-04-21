@@ -2,11 +2,8 @@
 
 /* Colors based on Nord theme */
 
-/* DISGUSTING light mode */
 .card {
-    /* Variables */
-
-    /* Colors */
+    /* DISGUSTING light mode, ugh */
     --color: rgb(46, 52, 64);
     --text-shadow: var(--outer-border-color);
 
@@ -22,33 +19,10 @@
 
     --code-color: rgb(135, 191, 207);
     --code-background-color: rgb(60, 67, 83);
-
-    /* Distances */
-    --top-margin: 1.2em;
-    --content-text-padding: 0.3em;
-    
-    /* Borders */
-    --outer-border: 0.05em solid var(--outer-border-color);
-    
-    /* Sizes */
-    --note-max-width: 40em;
-    --line-height: 1.6;
-
-    /* Fonts */
-    --mono-font-family: "Roboto Mono", "Source Code Pro", "Ubuntu Mono" monospace;
-
-    /* Misc */
-    font-family: "Roboto", "Inter", "Rubik", "Avenir", "system-ui";
-    font-size: 20px;
-    text-align: center;
-    color: var(--color);
 }
 
-/* Night mode represent */
 .card.nightMode {
-    /* Variables */
-
-    /* Colors */
+    /* Night mode represent */
     --color: rgb(236, 239, 244);
     --text-shadow: var(--outer-border-color);
 
@@ -64,7 +38,9 @@
 
     --code-color: rgb(135, 191, 207);
     --code-background-color: rgb(60, 67, 83);
+}
 
+.note {
     /* Distances */
     --top-margin: 1.2em;
     --content-text-padding: 0.3em;
@@ -75,22 +51,25 @@
     /* Sizes */
     --note-max-width: 40em;
     --line-height: 1.6;
-    
-    /* Fonts */
-    --mono-font-family: "Roboto Mono", "Source Code Pro", "Ubuntu Mono" monospace;
 
-    /* Misc */
-    font-family: "Roboto", "Inter", "Rubik", "Avenir", "system-ui";
+    /* Fonts */
+    --font-family:"Roboto", "Inter", "Rubik", "Avenir", "system-ui";
+    --mono-font-family: "Roboto Mono", "Source Code Pro", "Ubuntu Mono", monospace;
+
+    /* Text */
+    color: var(--color);
+    font-family: var(--font-family);
     font-size: 20px;
     text-align: center;
-    color: var(--color);
-}
-
-.note {
+    
     border: var(--outer-border);
     border-radius: 4px;
+    
     background-color: var(--note-background);
+    
     line-height: var(--line-height);
+    
+    /* Margins and padding */
     padding: 0.4em;
     margin-top: var(--top-margin);
     max-width: var(--note-max-width);
