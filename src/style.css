@@ -1,4 +1,4 @@
-/* Colors based on Nord theme, look there for color options */
+/* Colors based on Nord theme */
 .card {
     /* Variables */
 
@@ -8,12 +8,12 @@
     --kbd-background: #3b4252;
     --note-background: #2e3440;
     --kbd-shadow: #4c566a;
-    --aurora-green: #a3be8c;
-    --aurora-red: #bf616a;
+    --kbd-color: #a3be8c;
+    --title-background-color: #bf616a;
     --divider-color: #4c566a;
 
     /* Distances */
-    --top-margin: 0.9em;
+    --top-margin: 1.2em;
     
     /* Borders */
     --outer-border: 0.05em solid var(--outer-border-color);
@@ -37,6 +37,12 @@
     padding: 0.4em;
     margin-top: var(--top-margin);
     max-width: var(--note-max-width);
+    
+    /* Flexbox */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: stretch;
 }
 
 /* #### FRONT #### */
@@ -49,15 +55,15 @@
     font-weight: bolder;
     font-family: monospace;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     text-shadow: 0.05em 0 rgb(53, 53, 53);
     color: var(--snow-storm-white);
     
     /* Box */
     padding: .1em .7em;
     border: var(--outer-border);
-    border-radius: 11px;
-    background-color: var(--aurora-red);
+    border-radius: 20px;
+    background-color: var(--title-background-color);
     
     /* Placement */
     margin: 0 auto;
@@ -76,6 +82,16 @@ hr.card-divider {
     margin: 0;
 }
 
+/* Container for shortcuts */
+.shortcut-container {
+    color: var(--kbd-color);
+    font-size: x-large;
+    text-shadow: var(--kbd-shadow);
+    text-align: center !important;
+    padding-top: 0.7em;
+    margin: auto;
+}
+
 /* Keyboard keys */
 kbd {
     /* Text */
@@ -83,7 +99,7 @@ kbd {
     text-shadow: none !important;
     
     /* Box */
-    border: 1px solid var(--aurora-green);
+    border: 1px solid var(--kbd-color);
     border-radius: 3pt;
     background-color: var(--kbd-background);
     box-shadow: 0 2px 3px var(--kbd-shadow);
@@ -91,14 +107,4 @@ kbd {
     /* Placement */
     margin: .2em;
     padding: .1em .6em;
-}
-
-/* Container for shortcuts */
-.shortcut-container {
-    color: var(--aurora-green);
-    font-size: x-large;
-    text-shadow: var(--kbd-shadow);
-    text-align: center !important;
-    padding-top: 0.7em;
-    margin: auto;
 }
