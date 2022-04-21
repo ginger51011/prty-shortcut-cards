@@ -9,11 +9,14 @@
     --note-background: rgb(46, 52, 64);
     --kbd-shadow: rgb(76, 86, 106);
     --kbd-color: rgb(163, 190, 140);
-    --title-background-color: rgb(191, 97, 106);
+    --title-background-color: rgb(208, 135, 112);
     --divider-color: rgb(76, 86, 106);
+    --code-color: rgb(135, 191, 207);
+    --code-background-color: rgb(60, 67, 83);
 
     /* Distances */
     --top-margin: 1.2em;
+    --front-text-padding: 0.3em;
     
     /* Borders */
     --outer-border: 0.05em solid var(--outer-border-color);
@@ -45,6 +48,13 @@
     align-items: stretch;
 }
 
+code {
+    padding: 2px 4px;
+    color: var(--code-color) ;
+    background-color: var(--code-background-color);
+    border-radius: 3px;
+}
+
 /* #### FRONT #### */
 .title-container {
     margin-top: calc(-1 * var(--top-margin));
@@ -70,7 +80,7 @@
 }
 
 div.front-container {
-    padding: 0.3em;
+    padding: var(--front-text-padding);
     margin: auto;
 }
 
