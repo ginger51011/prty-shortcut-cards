@@ -1,5 +1,5 @@
-<span id="shortcut-sequence" hidden>Ctrl b, O</span>
-<div id="formatted-sequence"></div>
+<span id="shortcut-sequence" hidden>{{Shortcut}}</span>
+<div id="formatted-sequence" class="shortcut-container"></div>
 
 <script>
     /**
@@ -9,12 +9,12 @@
     // Splits shortcut on `,`, to support commands
     // as `Ctrl+K, O`, and applies styling on components
     let subcommands = shortcutText.split(',');
-    
+
     // Trim away leading and trailing whitespaces
     subcommands = subcommands.map((sub) => sub.trim());
 
     const container = document.getElementById('formatted-sequence');
-    
+
     subcommands.forEach((sub, idx) => {
         if (idx !== 0) {
             // We have a new subcommand, prepend a `, `
@@ -27,10 +27,9 @@
                 // Prepend a plus, this is not the first in a sequence
                 container.append('+');
             }
-            
-            const newElement = document.createElement('span');
+
+            const newElement = document.createElement('kbd');
             newElement.innerText = s;
-            newElement.setAttribute('class', 'prty-button');
             container.append(newElement);
         });
     });
