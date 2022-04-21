@@ -17,39 +17,39 @@
     <hr class="card-divider"/>
     
     <!-- Back of card begins -->
-    <span id="shortcut-sequence-1" hidden>{{Shortcut Sequence}}</span>
-    <span id="shortcut-sequence-2" hidden>{{Extra Shortcut Sequence}}</span>
+    <span id="shortcut-combo-1" hidden>{{Shortcut Combination}}</span>
+    <span id="shortcut-combo-2" hidden>{{Extra Shortcut Combination}}</span>
     <!-- Is unhidden when element is ready -->
-    <div id="formatted-sequence" class="shortcut-container" hidden>
-        {{^Shortcut Sequence}}
+    <div id="formatted-shortcut" class="shortcut-container" hidden>
+        {{^Shortcut Combination}}
             <i>Fill field shortcut in form `Ctrl Shift P` to format!</i>
-        {{/Shortcut Sequence}}
+        {{/Shortcut Combination}}
     </div>
 
     <script>
-        const shortcutText = document.getElementById('shortcut-sequence-1').innerText;
-        const extraSequenceText = document.getElementById('shortcut-sequence-2').innerText;
+        const shortcutText = document.getElementById('shortcut-combo-1').innerText;
+        const extracomboText = document.getElementById('shortcut-combo-2').innerText;
 
-        const sequenceContainer = document.getElementById('formatted-sequence');
+        const shortcutContainer = document.getElementById('formatted-shortcut');
         
         const shortcutArray = shortcutText.split(' ');
-        appendKbd(shortcutArray, sequenceContainer);
+        appendKbd(shortcutArray, shortcutContainer);
         
-        if (extraSequenceText && extraSequenceText.length !== '') {
-            const extraArray = extraSequenceText.split(' ');
-            appendKbd(extraArray, sequenceContainer);
+        if (extracomboText && extracomboText.length !== '') {
+            const extraArray = extracomboText.split(' ');
+            appendKbd(extraArray, shortcutContainer);
         }
         
         // Was hidden until now, so building of element cannot be seen
-        sequenceContainer.removeAttribute('hidden');
+        shortcutContainer.removeAttribute('hidden');
 
         /**
-         * Appends a sequence of keys, properly formatted as `<kbd>` elements
+         * Appends a combo of keys, properly formatted as `<kbd>` elements
          */
-        function appendKbd(sequenceArray, container) {
-            sequenceArray.forEach((key, index) => {
+        function appendKbd(comboArray, container) {
+            comboArray.forEach((key, index) => {
                 if (index !== 0) {
-                    // Prepend a plus, this is not the first in a sequence
+                    // Prepend a plus, this is not the first in a combo
                     container.append('+');
                 }
 
