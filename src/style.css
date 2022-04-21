@@ -16,7 +16,7 @@
 
     /* Distances */
     --top-margin: 1.2em;
-    --front-text-padding: 0.3em;
+    --content-text-padding: 0.3em;
     
     /* Borders */
     --outer-border: 0.05em solid var(--outer-border-color);
@@ -80,7 +80,7 @@ code {
 }
 
 div.front-container {
-    padding: var(--front-text-padding);
+    padding: var(--content-text-padding);
     margin: auto;
 }
 
@@ -90,6 +90,7 @@ hr.card-divider {
     border-top: 2px dotted var(--divider-color);
     background-color: transparent;
     margin: 0;
+    margin-top: 0.4em;
 }
 
 /* Container for shortcuts */
@@ -98,7 +99,7 @@ hr.card-divider {
     font-size: x-large;
     text-shadow: var(--kbd-shadow);
     text-align: center !important;
-    padding-top: 0.7em;
+    padding: var(--content-text-padding);
     margin: auto;
 }
 
