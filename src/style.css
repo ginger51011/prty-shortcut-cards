@@ -1,27 +1,52 @@
 /* Colors based on Nord theme, look there for color options */
-
-/* #### FRONT #### */
 .card {
+    /* Variables */
+
+    /* Colors */
+    --snow-storm-white: #eceff4;
+    --dark-background: #3b4252;
+    --light-background: #4c566a;
+    --shadow: #2e3440;
+    --aurora-green: #a3be8c;
+    --aurora-red: #bf616a;
+
+    /* Distances */
+    --top-margin: 0.9em;
+
+    /* Misc */
     font-family: arial;
     font-size: 20px;
     text-align: center;
-    color: black;
-    background-color: white;
+    color: var(--snow-storm-white);
 }
 
+.note {
+    border: 0.05em solid var(--snow-storm-white);
+    border-radius: 4px;
+    border-color: var(--snow-storm-white);
+    background-color: var(--light-background);
+    padding: 0.4em;
+    margin-top: var(--top-margin);
+}
+
+/* #### FRONT #### */
 .title-container {
+    margin-top: calc(-1 * var(--top-margin));
+}
+
+.title-text {
     /* Text */
     font-weight: bolder;
     font-family: monospace;
     text-align: center;
     font-size: 15px;
     text-shadow: 0.05em 0 rgb(53, 53, 53);
-    color: white;
+    color: var(--snow-storm-white);
     
     /* Box */
     padding: .1em .7em;
     border-radius: 11px;
-    background-color: #bf616a;
+    background-color: var(--aurora-red);
     
     /* Placement */
     margin: 0 auto;
@@ -35,10 +60,10 @@ kbd {
     text-shadow: none !important;
     
     /* Box */
-    border: 1px solid #a3be8c;
+    border: 1px solid var(--aurora-green);
     border-radius: 3pt;
-    background-color: #3b4252;
-    box-shadow: 0 2px 3px #2e3440;
+    background-color: var(--dark-background);
+    box-shadow: 0 2px 3px var(--shadow);
     
     /* Placement */
     margin: .2em;
@@ -47,8 +72,8 @@ kbd {
 
 /* Container for shortcuts */
 .shortcut-container {
-    color: #a3be8c;
-    font-size: xx-large;
-    text-shadow: #2e3440;
+    color: var(--aurora-green);
+    font-size: x-large;
+    text-shadow: var(--shadow);
     text-align: center !important;
 }
