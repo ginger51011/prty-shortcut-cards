@@ -3,14 +3,14 @@
     /* Variables */
 
     /* Colors */
-    --snow-storm-white: #eceff4;
-    --outer-border-color: #4c566a;
-    --kbd-background: #3b4252;
-    --note-background: #2e3440;
-    --kbd-shadow: #4c566a;
-    --kbd-color: #a3be8c;
-    --title-background-color: #bf616a;
-    --divider-color: #4c566a;
+    --snow-storm-white: rgb(236, 239, 244);
+    --outer-border-color: rgb(76, 86, 106);
+    --kbd-background: rgb(59, 66, 82);
+    --note-background: rgb(46, 52, 64);
+    --kbd-shadow: rgb(76, 86, 106);
+    --kbd-color: rgb(163, 190, 140);
+    --title-background-color: rgb(191, 97, 106);
+    --divider-color: rgb(76, 86, 106);
 
     /* Distances */
     --top-margin: 1.2em;
