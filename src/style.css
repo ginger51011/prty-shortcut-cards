@@ -7,15 +7,18 @@
     /* Variables */
 
     /* Colors */
-    --color: rgb(236, 239, 244);
-    --outer-border-color: rgb(76, 86, 106);
-    --note-background: rgb(46, 52, 64);
+    --color: rgb(46, 52, 64);
+    --text-shadow: var(--outer-border-color);
+
+    --outer-border-color: rgb(216, 222, 233);
+    --note-background: rgb(229, 233, 240);
+    --divider-color: var(--outer-border-color);
+
     --title-background-color: rgb(208, 135, 112);
-    --divider-color: rgb(76, 86, 106);
 
     --kbd-color: rgb(163, 190, 140);
     --kbd-background-color: rgb(59, 66, 82);
-    --kbd-shadow: rgb(76, 86, 106);
+    --kbd-shadow: var(--outer-border-color);
 
     --code-color: rgb(135, 191, 207);
     --code-background-color: rgb(60, 67, 83);
@@ -44,14 +47,17 @@
 
     /* Colors */
     --color: rgb(236, 239, 244);
+    --text-shadow: var(--outer-border-color);
+
     --outer-border-color: rgb(76, 86, 106);
     --note-background: rgb(46, 52, 64);
+    --divider-color: var(--outer-border-color);
+
     --title-background-color: rgb(208, 135, 112);
-    --divider-color: rgb(76, 86, 106);
 
     --kbd-color: rgb(163, 190, 140);
     --kbd-background-color: rgb(59, 66, 82);
-    --kbd-shadow: rgb(76, 86, 106);
+    --kbd-shadow: var(--outer-border-color);
 
     --code-color: rgb(135, 191, 207);
     --code-background-color: rgb(60, 67, 83);
@@ -108,7 +114,7 @@ code {
     font-family: monospace;
     text-align: center;
     font-size: 20px;
-    text-shadow: 0.05em 0 rgb(53, 53, 53);
+    text-shadow: 0.05em 0 var(--text-shadow);
     color: var(--color);
     
     /* Box */
