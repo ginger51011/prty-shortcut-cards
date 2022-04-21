@@ -17,6 +17,10 @@
     
     /* Borders */
     --outer-border: 0.05em solid var(--outer-border-color);
+    
+    /* Sizes */
+    --note-max-width: 40em;
+    --line-height: 1.6;
 
     /* Misc */
     font-family: arial;
@@ -29,8 +33,10 @@
     border: var(--outer-border);
     border-radius: 4px;
     background-color: var(--note-background);
+    line-height: var(--line-height);
     padding: 0.4em;
     margin-top: var(--top-margin);
+    max-width: var(--note-max-width);
 }
 
 /* #### FRONT #### */
