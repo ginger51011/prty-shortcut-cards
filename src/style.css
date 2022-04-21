@@ -1,16 +1,58 @@
+/* See ginger51011/prty-shortcut-cards for full source */
+
 /* Colors based on Nord theme */
+
+/* DISGUSTING light mode */
 .card {
     /* Variables */
 
     /* Colors */
     --color: rgb(236, 239, 244);
     --outer-border-color: rgb(76, 86, 106);
-    --kbd-background: rgb(59, 66, 82);
     --note-background: rgb(46, 52, 64);
-    --kbd-shadow: rgb(76, 86, 106);
-    --kbd-color: rgb(163, 190, 140);
     --title-background-color: rgb(208, 135, 112);
     --divider-color: rgb(76, 86, 106);
+
+    --kbd-color: rgb(163, 190, 140);
+    --kbd-background-color: rgb(59, 66, 82);
+    --kbd-shadow: rgb(76, 86, 106);
+
+    --code-color: rgb(135, 191, 207);
+    --code-background-color: rgb(60, 67, 83);
+
+    /* Distances */
+    --top-margin: 1.2em;
+    --content-text-padding: 0.3em;
+    
+    /* Borders */
+    --outer-border: 0.05em solid var(--outer-border-color);
+    
+    /* Sizes */
+    --note-max-width: 40em;
+    --line-height: 1.6;
+
+    /* Misc */
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    color: var(--color);
+}
+
+/* Night mode represent */
+.card.nightMode {
+    /* Variables */
+
+    /* Colors */
+    --color: rgb(236, 239, 244);
+    --outer-border-color: rgb(76, 86, 106);
+    --note-background: rgb(46, 52, 64);
+    --title-background-color: rgb(208, 135, 112);
+    --divider-color: rgb(76, 86, 106);
+
+    --kbd-color: rgb(163, 190, 140);
+    --kbd-background-color: rgb(59, 66, 82);
+    --kbd-shadow: rgb(76, 86, 106);
+
     --code-color: rgb(135, 191, 207);
     --code-background-color: rgb(60, 67, 83);
 
@@ -112,7 +154,7 @@ kbd {
     /* Box */
     border: 1px solid var(--kbd-color);
     border-radius: 3pt;
-    background-color: var(--kbd-background);
+    background-color: var(--kbd-background-color);
     box-shadow: 0 2px 3px var(--kbd-shadow);
     
     /* Placement */
