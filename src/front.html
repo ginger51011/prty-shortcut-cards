@@ -1,22 +1,13 @@
-<span class="title-container">
-VSCode
-</span>
-<style>
-.title-container {
-    /* Text */
-    font-weight: bolder;
-    font-family: monospace;
-    text-align: center;
-    font-size: 15px;
-    text-shadow: 0.05em 0 rgb(53, 53, 53);
-    color: white;
-    
-    /* Box */
-    padding: .1em .7em;
-    border-radius: 11px;
-    background-color: #bf616a;
-    
-    /* Placement */
-    margin: 0 auto;
-}
-</style>
+<div class="note">
+    <div class="title-container">
+        <span class="title-text">
+            {{Software}}
+            {{^Software}}
+                Unspecified Software
+            {{/Software}}
+        </span>
+    </div>
+    <div class="front-container">
+        {{Action}}
+    </div>
+</div>

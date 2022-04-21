@@ -1,5 +1,9 @@
 <span id="shortcut-sequence" hidden>{{Shortcut}}</span>
-<div id="formatted-sequence" class="shortcut-container"></div>
+<div id="formatted-sequence" class="shortcut-container">
+    {{^Shortcut}}
+        <i>Fill field shortcut in form `Ctrl Shift P` to format!</i>
+    {{/Shortcut}}
+</div>
 
 <script>
     /**
