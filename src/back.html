@@ -1,0 +1,37 @@
+<span id="shortcut-sequence" hidden>Ctrl b, O</span>
+<div id="formatted-sequence"></div>
+
+<script>
+    /**
+    */
+    const shortcutText = document.getElementById('shortcut-sequence').innerText;
+
+    // Splits shortcut on `,`, to support commands
+    // as `Ctrl+K, O`, and applies styling on components
+    let subcommands = shortcutText.split(',');
+    
+    // Trim away leading and trailing whitespaces
+    subcommands = subcommands.map((sub) => sub.trim());
+
+    const container = document.getElementById('formatted-sequence');
+    
+    subcommands.forEach((sub, idx) => {
+        if (idx !== 0) {
+            // We have a new subcommand, prepend a `, `
+            container.append(', ');
+        }
+
+        const shortcutArray = sub.split(' ');
+        shortcutArray.forEach((s, i) => {
+            if (i !== 0) {
+                // Prepend a plus, this is not the first in a sequence
+                container.append('+');
+            }
+            
+            const newElement = document.createElement('span');
+            newElement.innerText = s;
+            newElement.setAttribute('class', 'prty-button');
+            container.append(newElement);
+        });
+    });
+</script>

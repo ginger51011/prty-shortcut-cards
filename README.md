@@ -1,0 +1,1 @@
+# prt-shortcut cards - Simply beautiful Anki cards for shortcuts
