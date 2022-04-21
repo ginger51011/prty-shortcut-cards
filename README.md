@@ -1,10 +1,8 @@
 # prty-shortcut cards - Simply pretty Anki cards for keyboard shortcuts
 
 `prty-shortcut` allows for quickly creating nice looking Anki cards for memorizing keyboard
-shortcuts for different software.
-
-`prty-shortcut` formats shortcuts automatically, so by entering `Ctrl b` and `c`, `prty-shortcut` will insert
-the format below!
+shortcuts for different software. Shortcuts are formatted automatically, so by entering `Ctrl b` and `c`,
+`prty-shortcut` will insert the format below!
 
 ![example card](./assets/example.png)
 
