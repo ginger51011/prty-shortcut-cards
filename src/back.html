@@ -29,9 +29,9 @@
         */
         const shortcutText = document.getElementById('shortcut-sequence').innerText;
 
-        // Splits shortcut on `,`, to support commands
-        // as `Ctrl+K, O`, and applies styling on components
-        let subcommands = shortcutText.split(',');
+        // Splits shortcut on one or more `\n`, to support commands
+        // as `Ctrl+K O`, and applies styling on components
+        let subcommands = shortcutText.split(/\n+/);
 
         // Trim away leading and trailing whitespaces
         subcommands = subcommands.map((sub) => sub.trim());
@@ -40,8 +40,8 @@
 
         subcommands.forEach((sub, idx) => {
             if (idx !== 0) {
-                // We have a new subcommand, prepend a `, `
-                container.append(', ');
+                // We have a new subcommand, prepend a space
+                container.append(' ');
             }
 
             const shortcutArray = sub.split(' ');
