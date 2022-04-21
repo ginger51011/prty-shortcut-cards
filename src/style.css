@@ -12,6 +12,9 @@
 
     /* Distances */
     --top-margin: 0.9em;
+    
+    /* Borders */
+    --outer-border: 0.05em solid var(--snow-storm-white);
 
     /* Misc */
     font-family: arial;
@@ -21,7 +24,7 @@
 }
 
 .note {
-    border: 0.05em solid var(--snow-storm-white);
+    border: var(--outer-border);
     border-radius: 4px;
     border-color: var(--snow-storm-white);
     background-color: var(--light-background);
@@ -45,6 +48,7 @@
     
     /* Box */
     padding: .1em .7em;
+    border: var(--outer-border);
     border-radius: 11px;
     background-color: var(--aurora-red);
     
