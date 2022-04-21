@@ -4,17 +4,19 @@
 
     /* Colors */
     --snow-storm-white: #eceff4;
-    --dark-background: #3b4252;
-    --light-background: #434c5e;
-    --shadow: #2e3440;
+    --outer-border-color: #4c566a;
+    --kbd-background: #3b4252;
+    --note-background: #2e3440;
+    --shadow: #434c5e;
     --aurora-green: #a3be8c;
     --aurora-red: #bf616a;
+    --divider-color: #4c566a;
 
     /* Distances */
     --top-margin: 0.9em;
     
     /* Borders */
-    --outer-border: 0.05em solid var(--snow-storm-white);
+    --outer-border: 0.05em solid var(--outer-border-color);
 
     /* Misc */
     font-family: arial;
@@ -26,8 +28,7 @@
 .note {
     border: var(--outer-border);
     border-radius: 4px;
-    border-color: var(--snow-storm-white);
-    background-color: var(--light-background);
+    background-color: var(--note-background);
     padding: 0.4em;
     margin-top: var(--top-margin);
 }
@@ -56,7 +57,19 @@
     margin: 0 auto;
 }
 
+div.front-container {
+    padding: 0.3em;
+    margin: auto;
+}
+
 /* #### BACK #### */
+hr.card-divider {
+    border: none;
+    border-top: 2px dotted var(--divider-color);
+    background-color: transparent;
+    margin: 0;
+}
+
 /* Keyboard keys */
 kbd {
     /* Text */
@@ -66,7 +79,7 @@ kbd {
     /* Box */
     border: 1px solid var(--aurora-green);
     border-radius: 3pt;
-    background-color: var(--dark-background);
+    background-color: var(--kbd-background);
     box-shadow: 0 2px 3px var(--shadow);
     
     /* Placement */
@@ -80,4 +93,6 @@ kbd {
     font-size: x-large;
     text-shadow: var(--shadow);
     text-align: center !important;
+    padding-top: 0.7em;
+    margin: auto;
 }
