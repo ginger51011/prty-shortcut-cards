@@ -19,14 +19,14 @@
     <!-- Back of card begins -->
     <span id="shortcut-sequence-1" hidden>{{Shortcut Sequence}}</span>
     <span id="shortcut-sequence-2" hidden>{{Extra Shortcut Sequence}}</span>
-    <div id="formatted-sequence" class="shortcut-container">
+    <!-- Is unhidden when element is ready -->
+    <div id="formatted-sequence" class="shortcut-container" hidden>
         {{^Shortcut Sequence}}
             <i>Fill field shortcut in form `Ctrl Shift P` to format!</i>
         {{/Shortcut Sequence}}
     </div>
 
     <script>
-
         const shortcutText = document.getElementById('shortcut-sequence-1').innerText;
         const extraSequenceText = document.getElementById('shortcut-sequence-2').innerText;
 
@@ -39,6 +39,9 @@
             const extraArray = extraSequenceText.split(' ');
             appendKbd(extraArray, sequenceContainer);
         }
+        
+        // Was hidden until now, so building of element cannot be seen
+        sequenceContainer.removeAttribute('hidden');
 
         /**
          * Appends a sequence of keys, properly formatted as `<kbd>` elements
