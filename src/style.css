@@ -3,7 +3,7 @@
     /* Variables */
 
     /* Colors */
-    --snow-storm-white: rgb(236, 239, 244);
+    --color: rgb(236, 239, 244);
     --outer-border-color: rgb(76, 86, 106);
     --kbd-background: rgb(59, 66, 82);
     --note-background: rgb(46, 52, 64);
@@ -29,7 +29,7 @@
     font-family: arial;
     font-size: 20px;
     text-align: center;
-    color: var(--snow-storm-white);
+    color: var(--color);
 }
 
 .note {
@@ -67,7 +67,7 @@ code {
     text-align: center;
     font-size: 20px;
     text-shadow: 0.05em 0 rgb(53, 53, 53);
-    color: var(--snow-storm-white);
+    color: var(--color);
     
     /* Box */
     padding: .1em .7em;
