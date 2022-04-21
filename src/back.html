@@ -27,37 +27,39 @@
     </div>
 
     <script>
-        const shortcutText = document.getElementById('shortcut-combo-1').innerText;
-        const extracomboText = document.getElementById('shortcut-combo-2').innerText;
+        // Block so const will go out of scope when appropriate
+        {
+            const shortcutText = document.getElementById('shortcut-combo-1').innerText;
+            const extracomboText = document.getElementById('shortcut-combo-2').innerText;
 
-        const shortcutContainer = document.getElementById('formatted-shortcut');
-        
-        const shortcutArray = shortcutText.split(' ');
-        appendKbd(shortcutArray, shortcutContainer);
-        
-        if (extracomboText && extracomboText.length !== '') {
-            const extraArray = extracomboText.split(' ');
-            appendKbd(extraArray, shortcutContainer);
+            const shortcutContainer = document.getElementById('formatted-shortcut');
+            
+            const shortcutArray = shortcutText.split(' ');
+            appendKbd(shortcutArray, shortcutContainer);
+            
+            if (extracomboText && extracomboText.length !== '') {
+                const extraArray = extracomboText.split(' ');
+                appendKbd(extraArray, shortcutContainer);
+            }
+            
+            // Was hidden until now, so building of element cannot be seen
+            shortcutContainer.removeAttribute('hidden');
+
+            /**
+             * Appends a combo of keys, properly formatted as `<kbd>` elements
+             */
+            function appendKbd(comboArray, container) {
+                comboArray.forEach((key, index) => {
+                    if (index !== 0) {
+                        // Prepend a plus, this is not the first in a combo
+                        container.append('+');
+                    }
+
+                    const newElement = document.createElement('kbd');
+                    newElement.innerText = key;
+                    container.append(newElement);
+                });
+            }
         }
-        
-        // Was hidden until now, so building of element cannot be seen
-        shortcutContainer.removeAttribute('hidden');
-
-        /**
-         * Appends a combo of keys, properly formatted as `<kbd>` elements
-         */
-        function appendKbd(comboArray, container) {
-            comboArray.forEach((key, index) => {
-                if (index !== 0) {
-                    // Prepend a plus, this is not the first in a combo
-                    container.append('+');
-                }
-
-                const newElement = document.createElement('kbd');
-                newElement.innerText = key;
-                container.append(newElement);
-            });
-        }
-
     </script>
 </div>

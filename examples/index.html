@@ -7,18 +7,47 @@
     <!-- We use jQuery to load our other HTML files -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- These divs emulates Anki -->
-    <div class="card nightMode">
-        <div id="back-night-mode"></div>
-        <script>
+    <div class="card nightMode dark-container">
+        <div id="front-night-note"></div>
+        <div id="back-night-note"></div>
+    </div>
+    
+    <div class="card light-container">
+        <div id="front-light-note"></div>
+        <div id="back-light-note"></div>
+    </div>
+
+    <!-- Load in HTML from actual cards -->
+    <script>
+        $(function() {
+            // No scripts in this, so we can ignore scripts
+            $('#front-night-note').load('../src/front.html .note');
+        });
+
+        $(function() {
+            // By executing `.load()` with selector, we avoid script being ran
+            $('#back-night-note').load('../src/back.html .note', '', () => {
+                const ev = new CustomEvent('night-card-loaded');
+                document.dispatchEvent(ev);
+            });
+        });
+
+        $(function() {
+            // No scripts in this, so we can ignore scripts
+            $('#front-light-note').load('../src/front.html .note');
+        });
+
+        document.addEventListener('night-card-done', () => {
             $(function() {
                 // By executing `.load()` with selector, we avoid script being ran
-                $('#back-night-mode').load('../src/back.html .note', '', () => {
-                    const ev = new CustomEvent('card-loaded');
+                $('#back-light-note').load('../src/back.html .note', '', () => {
+                    console.log('Loaded back of light note!');
+                    const ev = new CustomEvent('light-card-loaded');
                     document.dispatchEvent(ev);
                 });
             });
-        </script>
-    </div>
+        });
+    </script>
     
     <!-- Nasty hack to load script -->
     <div id="dummy" hidden></div>
@@ -26,7 +55,15 @@
     <script>
         // We want to replace all annoying placeholders `{{ Bla }}` with
         // something useful, so we do it in this yank way
-        document.addEventListener('card-loaded', () => {
+        document.addEventListener('night-card-loaded', () => {
+            setupCard(true);
+        });
+
+        document.addEventListener('light-card-loaded', () => {
+            setupCard(false);
+        });
+
+        function setupCard(nightCard) {
             const tts = document.getElementsByClassName('title-text');
             
             for (let i = 0; i < tts.length; i-=-1) {
@@ -39,16 +76,41 @@
                 fcs[i].innerText = 'Simply win at life, also insert on new line';
             }
 
-            document.getElementById('shortcut-combo-1').innerText = 'Ctrl K';
-            document.getElementById('shortcut-combo-2').innerText = 'I';
+            const sc1 = document.getElementById('shortcut-combo-1');
+            sc1.innerText = 'Ctrl K';
             
+            const sc2 = document.getElementById('shortcut-combo-2');
+            sc2.innerText = 'I'; 
+
             // Make sure back of card is empty
-            document.getElementById('formatted-shortcut').innerHTML = '';
-            
+            const fmtc = document.getElementById('formatted-shortcut');
+            fmtc.innerText = '';
+           
             // Now we load the script of that file using a nasty hack
            $(() => {
-                $('#dummy').load('../src/back.html');
+                $('#dummy').load('../src/back.html', '', () => {
+                    console.log('Loaded a script!');
+                    // Workaround for back script not finding more than one
+                    sc1.id = 'Not this anymore';
+                    sc2.id = 'Not this either';
+                    fmtc.id = 'Gone. Reduced to atoms';
+                    if (nightCard) {
+                        const ev = new CustomEvent('night-card-done');
+                        document.dispatchEvent(ev);
+                    }
+                });
            })
-        });
+        }
     </script>
+    
+    <style>
+        .dark-container {
+            background-color: black;
+            padding: 2em;
+        }
+        .light-container {
+            background-color: white;
+            padding: 2em;
+        }
+    </style>
 </body>
