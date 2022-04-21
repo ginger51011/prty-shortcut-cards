@@ -17,44 +17,44 @@
     <hr class="card-divider"/>
     
     <!-- Back of card begins -->
-    <span id="shortcut-sequence" hidden>{{Shortcut}}</span>
+    <span id="shortcut-sequence-1" hidden>{{Shortcut Sequence}}</span>
+    <span id="shortcut-sequence-2" hidden>{{Extra Shortcut Sequence}}</span>
     <div id="formatted-sequence" class="shortcut-container">
-        {{^Shortcut}}
+        {{^Shortcut Sequence}}
             <i>Fill field shortcut in form `Ctrl Shift P` to format!</i>
-        {{/Shortcut}}
+        {{/Shortcut Sequence}}
     </div>
 
     <script>
+
+        const shortcutText = document.getElementById('shortcut-sequence-1').innerText;
+        const extraSequenceText = document.getElementById('shortcut-sequence-2').innerText;
+
+        const sequenceContainer = document.getElementById('formatted-sequence');
+        
+        const shortcutArray = shortcutText.split(' ');
+        appendKbd(shortcutArray, sequenceContainer);
+        
+        if (extraSequenceText && extraSequenceText.length !== '') {
+            const extraArray = extraSequenceText.split(' ');
+            appendKbd(extraArray, sequenceContainer);
+        }
+
         /**
-        */
-        const shortcutText = document.getElementById('shortcut-sequence').innerText;
-
-        // Splits shortcut on one or more `\n`, to support commands
-        // as `Ctrl+K O`, and applies styling on components
-        let subcommands = shortcutText.split(/\n+/);
-
-        // Trim away leading and trailing whitespaces
-        subcommands = subcommands.map((sub) => sub.trim());
-
-        const container = document.getElementById('formatted-sequence');
-
-        subcommands.forEach((sub, idx) => {
-            if (idx !== 0) {
-                // We have a new subcommand, prepend a space
-                container.append(' ');
-            }
-
-            const shortcutArray = sub.split(' ');
-            shortcutArray.forEach((s, i) => {
-                if (i !== 0) {
+         * Appends a sequence of keys, properly formatted as `<kbd>` elements
+         */
+        function appendKbd(sequenceArray, container) {
+            sequenceArray.forEach((key, index) => {
+                if (index !== 0) {
                     // Prepend a plus, this is not the first in a sequence
                     container.append('+');
                 }
 
                 const newElement = document.createElement('kbd');
-                newElement.innerText = s;
+                newElement.innerText = key;
                 container.append(newElement);
             });
-        });
+        }
+
     </script>
 </div>

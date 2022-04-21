@@ -3,7 +3,7 @@
 `prty-shortcut` allows for quickly creating nice looking Anki cards for memorizing keyboard
 shortcuts for different software.
 
-`prty-shortcut` formats shortcuts automatically, so by entering `Ctrl O<Enter>M`, `prty-shortcut` will insert
+`prty-shortcut` formats shortcuts automatically, so by entering `Ctrl O` and `M`, `prty-shortcut` will insert
 the format below!
 
 ## Installation
