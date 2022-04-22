@@ -131,6 +131,7 @@ hr.card-divider {
 .shortcut-container {
     color: var(--kbd-color);
     font-size: x-large;
+    line-height: 2em;
     text-shadow: var(--kbd-shadow);
     text-align: center !important;
     padding: var(--content-text-padding);
