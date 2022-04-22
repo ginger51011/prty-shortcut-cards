@@ -23,7 +23,7 @@ The note type can be also be manually created!
 2. Select the new note type and click `Fields`
 3. Make sure the note has the _exact_ following fields: `Software`, `Action`, `Key Combination` and `Extra Key Combination`. If you want to rename these, you have to change the front and back of the card.
 4. Save when done and now press `Cards`
-5. Copy [src/front.html](./src/front.html) into `Front Template`, [src/back.html](./src/back.html) into `Back Template` and [src/styles.css](./src/style.css) into `Styles` and save
+5. Copy [src/front.html](./src/front.html) into `Front Template`, [src/back.html](./src/back.html) into `Back Template` and [src/style.css](./src/style.css) into `Styles` and save
 6. Done! You should now be able to create new notes of the `prty-shortcut` type!
 
 ## Usage
