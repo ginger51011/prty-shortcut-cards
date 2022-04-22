@@ -55,6 +55,16 @@ and
 Now you will have inversed it all! If you never want the light cards, simple remove everything related to
 `.card` , and remove `.nightMode` from the line containing `.card.nightMode`.
 
+## Support
+
+If you like this deck and would like to support the creation of more like it, don't buy me a coffee. Donate your money to those who need it most.
+Personally I recommend [The GiveWell Maximum Impact Fund](https://www.givewell.org/maximum-impact-fund), where your money will make the biggest
+impact on someones life.
+
+If you instead want to help the development of Anki, consider supporting the developers of [Anki](https://github.com/ankitects/) and [AnkiDroid](https://opencollective.com/ankidroid).
+
+If you decide to support any of these causes, please contact me! It would make my day :)
+
 ## Development
 
 All card variants can be previewed using `examples/index.html`. Run a local webserver, using the same
