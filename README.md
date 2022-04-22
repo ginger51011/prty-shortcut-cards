@@ -57,8 +57,8 @@ Now you will have inversed it all! If you never want the light cards, simple rem
 
 ## Development
 
-All card variants can be previewed using `example/index.html`. Run a local webserver, using the same
-directory as this `README` as root, and click your way to `example/index.html`. To do this using python, run
+All card variants can be previewed using `examples/index.html`. Run a local webserver, using the same
+directory as this `README` as root, and click your way to `examples/index.html`. To do this using python, run
 
 ```
 python3 -m http.server 1337
