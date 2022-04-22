@@ -38,6 +38,9 @@
             appendKbd(shortcutArray, shortcutContainer);
             
             if (extracomboText && extracomboText.length !== '') {
+                // Add space before next combination
+                shortcutContainer.append(' ');
+
                 const extraArray = extracomboText.split(' ');
                 appendKbd(extraArray, shortcutContainer);
             }
