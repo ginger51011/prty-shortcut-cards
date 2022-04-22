@@ -71,7 +71,8 @@
     
     /* Margins and padding */
     padding: 0.4em;
-    margin-top: var(--top-margin);
+    margin: 0 auto;
+    margin-top: var(--top-margin) !important;
     max-width: var(--note-max-width);
     
     /* Flexbox */
