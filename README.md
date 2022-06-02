@@ -38,7 +38,7 @@ be formatted as `Shotcut Combination`. This field is not required, and will be i
 ### Using dark cards without night mode
 
 It is possible to change the CSS (styling, i.e. [this file](/src/style.css)) of the notes so that the dark cards can be
-used without night mode. To do this, simple edit the card in Anki:
+used without night mode. To do this, simply edit the card in Anki:
 
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd>, select `prty-shortcut` and click `Cards`), go to the `Styling` section and swap place of the following lines:
 
