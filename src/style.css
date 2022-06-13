@@ -141,10 +141,6 @@ hr.card-divider {
     padding: var(--content-text-padding);
 }
 
-.shortcut-container.mobile {
-    font-size: 6vw;
-}
-
 /* Keyboard keys */
 kbd {
     /* Text */
