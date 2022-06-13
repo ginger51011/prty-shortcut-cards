@@ -54,8 +54,9 @@
             function appendKbd(comboArray, container) {
                 comboArray.forEach((key, index) => {
                     if (index !== 0) {
-                        // Prepend a plus, this is not the first in a combo
-                        container.append('+');
+                        // Prepend a plus, this is not the first in a combo. Add
+                        // word boundaries to allow for wrapping
+                        container.append(document.createElement('wbr'), '+', document.createElement('wbr'));
                     }
 
                     const newElement = document.createElement('kbd');

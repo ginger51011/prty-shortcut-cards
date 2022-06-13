@@ -44,16 +44,16 @@
     /* Distances */
     --top-margin: 1.2em;
     --content-text-padding: 0.3em;
-    
+
     /* Borders */
     --outer-border: 0.05em solid var(--outer-border-color);
-    
+
     /* Sizes */
     --note-max-width: 40em;
     --line-height: 1.6;
 
     /* Fonts */
-    --font-family:"Roboto", "Inter", "Rubik", "Avenir", "system-ui";
+    --font-family: "Roboto", "Inter", "Rubik", "Avenir", "system-ui";
     --mono-font-family: "Roboto Mono", "Source Code Pro", "Ubuntu Mono", monospace;
 
     /* Text */
@@ -61,20 +61,20 @@
     font-family: var(--font-family);
     font-size: 20px;
     text-align: center;
-    
+
     border: var(--outer-border);
     border-radius: 4px;
-    
+
     background-color: var(--note-background);
-    
+
     line-height: var(--line-height);
-    
+
     /* Margins and padding */
     padding: 0.4em;
     margin: 0 auto;
     margin-top: var(--top-margin) !important;
     max-width: var(--note-max-width);
-    
+
     /* Flexbox */
     display: flex;
     flex-flow: column nowrap;
@@ -84,7 +84,7 @@
 
 code {
     padding: 2px 4px;
-    color: var(--code-color) ;
+    color: var(--code-color);
     background-color: var(--code-background-color);
     border-radius: 3px;
     font-family: var(--mono-font-family);
@@ -103,13 +103,13 @@ code {
     font-size: 20px;
     text-shadow: 0.05em 0 var(--text-shadow);
     color: var(--color);
-    
+
     /* Box */
     padding: .1em .7em;
     border: var(--outer-border);
     border-radius: 20px;
     background-color: var(--title-background-color);
-    
+
     /* Placement */
     margin: 0 auto;
 }
@@ -129,13 +129,16 @@ hr.card-divider {
 
 /* Container for shortcuts */
 .shortcut-container {
+    /* Text */
     color: var(--kbd-color);
-    font-size: x-large;
-    line-height: 2em;
-    text-shadow: var(--kbd-shadow);
+    font-size: 125%;
     text-align: center !important;
-    padding: var(--content-text-padding);
+    text-shadow: var(--kbd-shadow);
+    line-height: 2em;
+
+    /* Placement */
     margin: auto;
+    padding: var(--content-text-padding);
 }
 
 /* Keyboard keys */
@@ -143,13 +146,13 @@ kbd {
     /* Text */
     font-family: var(--mono-font-family);
     text-shadow: none !important;
-    
+
     /* Box */
     border: 1px solid var(--kbd-color);
     border-radius: 3pt;
     background-color: var(--kbd-background-color);
     box-shadow: 0 2px 3px var(--kbd-shadow);
-    
+
     /* Placement */
     margin: .2em;
     padding: .1em .6em;
