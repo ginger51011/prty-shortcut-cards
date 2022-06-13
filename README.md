@@ -1,5 +1,7 @@
 # prty-shortcut cards - Simply pretty Anki cards for keyboard shortcuts
 
+[![License](https://img.shields.io/github/license/ginger51011/prty-shortcut-cards)](https://github.com/ginger51011/prty-shortcut-cards/blob/main/LICENSE)
+
 `prty-shortcut` allows for quickly creating nice looking Anki cards for memorizing keyboard
 shortcuts for different software. Shortcuts are formatted automatically, so by entering `Ctrl K` and `I`,
 `prty-shortcut` will insert the format below!
